@@ -14,7 +14,7 @@ Animation is the process of creating motion effects on an object through continu
 
 <div><img src="https://user-images.githubusercontent.com/107544829/190916199-7df48b2b-556b-41da-a0f1-ae37f91c3aee.png" width="1000"/></div>
 
-[Referensi gambar](https://wall.alphacoders.com/big.php?i=546902)
+[Image Reference](https://wall.alphacoders.com/big.php?i=546902)
 
 <br>
 
@@ -196,11 +196,7 @@ A content-based recommendation system suggests content that is similar to what a
 
 For example, in an anime recommendation system, if a user likes the anime "Jujutsu Kaisen," the system can recommend other action genre anime.
 
-![TF-IDF Matrix](https://user-images.githubusercontent.com/107544829/190860242-6e0e9d61-e54f-46d0-930e-415e73cebab0.png)
 
-#### TF-IDF
-
-TF-IDF (Term Frequency - In
 
 <br>
 
