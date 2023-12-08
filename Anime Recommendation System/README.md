@@ -1,14 +1,14 @@
-# Proyek Akhir Anime Recommendation System
+# Final Project: Anime Recommendation System
 
-#### Disusun oleh : Irbah Labibah Nur Saidah
+#### Prepared by: Abhinav Goel
 
-Ini adalah proyek akhir sistem rekomendasi untuk memenuhi submission dicoding. Proyek ini membangun model berbasis content based filtering yang dapat menentukan top-N rekomendasi anime bagi user.
+This is the final project of a recommendation system to fulfill the submission requirements for Dicoding. The project builds a content-based filtering model that can determine the top-N anime recommendations for users.
 
-## Domain Proyek
+## Project Domain
 
-### Latar Belakang
+### Background
 
-Animasi merupakan proses menciptakan efek gerakan pada suatu objek dari perubahan kumpulan gambar secara terus-menerus dalam jangka waktu tertentu. Proses ini juga menambahkan efek suara, emosi, serta karakter sesuai dengan cerita sehingga dapat menghasilkan objek yang seolah-olah hidup. Anime tidak memiliki arti khusus dan merupakan cara orang Jepang untuk menyebut *animation*, baik animasi buatan Jepang maupun bukan. Namun, bagi orang-orang di luar Japang, kata anime digunakan untuk membedakan animasi buatan Jepang dengan animasi buatan Amerika dikarenakan adanya perbedaan ciri khas dari animasi kedua negara tersebut.
+Animation is the process of creating motion effects on an object through continuous changes in a collection of images over a specific period. This process also adds sound effects, emotions, and characters according to the story, resulting in objects that appear to come to life. Anime does not have a specific meaning and is a term used by the Japanese to refer to animation, whether it is made in Japan or not. However, for people outside Japan, the term "anime" is used to distinguish Japanese-made animation from animation produced in America due to the distinctive characteristics of animation in these two countries.
 
 <br>
 
@@ -18,86 +18,87 @@ Animasi merupakan proses menciptakan efek gerakan pada suatu objek dari perubaha
 
 <br>
 
-Anime sangat populer di dalam dan di luar Jepang sehingga banyak situs atau sistem steaming online yang memungkinkan pengguna untuk menonton anime dimana saja. Namun, jumlah anime yang beredar saat ini sangatlah banyak dan kadang membuat pengguna kesukaran untuk menemukan anime yang sesuai dengan selera mereka. Hal ini juga dapat disebabkan oleh terbatasnya deskripsi dan ulasan pengguna.
+Anime is extremely popular both within and outside Japan, leading to the existence of numerous online streaming sites and systems that enable users to watch anime from anywhere. However, the current abundance of available anime can sometimes pose a challenge for users to find anime that aligns with their preferences. This issue may also arise due to limited descriptions and user reviews.
 
-Berdasarkan pada masalah tersebut, maka penelitian ini dilakukan untuk memberi rekomendasi anime kepada pengguna berdasarkan kemiripan dari preferensi pengguna terhadap anime sebelumnya. Diharapkan dengan memberikan rekomendasi anime yang sesuai, pengguna dapat terhibur dan menghabiskan waktu lebih lama di dalam sistem dan mendatangkan keuntungan bagi pengembang sebagai penyedia sistem.
+In response to this problem, this research aims to provide anime recommendations to users based on the similarity of their preferences to previously watched anime. It is anticipated that by offering suitable anime recommendations, users can find entertainment more easily, spend more time within the system, and generate benefits for the developers as providers of the system.
 
-Referensi :
+References:
 
-- [Anime dan Gaya Hidup Mahasiswa](https://repository.uinjkt.ac.id/dspace/bitstream/123456789/45316/1/Ida%20Aisyah.pdf)
-- [Rekomendasi Anime dengan Latent Semantic Indexing Berbasis Sinopsis Genre](https://www.researchgate.net/publication/274712918_Rekomendasi_Anime_dengan_Latent_Semantic_Indexing_Berbasis_Sinopsis_Genre)
+1. [Anime and the Lifestyle of University Students](https://repository.uinjkt.ac.id/dspace/bitstream/123456789/45316/1/Ida%20Aisyah.pdf)
+
+2. [Anime Recommendation with Latent Semantic Indexing Based on Synopsis Genre](https://www.researchgate.net/publication/274712918_Rekomendasi_Anime_dengan_Latent_Semantic_Indexing_Berbasis_Sinopsis_Genre)
 
 ## Business Understanding
 
-Proyek ini dibangun untuk perusahaan dengan karakteristik bisnis sebagai berikut :
+This project is built for a company with the following business characteristics:
 
-- Perusahaan pengembang situs atau sistem streaming anime online.
-- Perusahaan pengembang situs rekomendasi dan informasi anime.
+- A company that develops a website or online anime streaming system.
+- A company that develops a recommendation and information website for anime.
 
 ### Problem Statement
 
-1. Dapatkah sistem memberikan rekomendasi tanpa input dari pengguna baru?
-2. Berdasarkan anime yang baru saja disukai pengguna, bagaimana cara membuat daftar rekomendasi anime dengan metode pendekatan content based filtering?
+1. Can the system provide recommendations without input from new users?
+2. Based on recently liked anime by users, how can we create a list of anime recommendations using the content-based filtering approach?
 
 ### Goals
 
-1. Menampilkan daftar top rekomendasi anime untuk pengguna baru.
-2. Menghasilkan daftar rekomendasi anime berdasarkan anime yang disukai pengguna dengan metode pendekatan content based filtering.
+1. Display a list of top anime recommendations for new users.
+2. Generate a list of anime recommendations based on recently liked anime using the content-based filtering approach.
 
 ### Solution Statement
 
-1. Menganalisis data dengan melakukan univariate analysis dan multivariate analysis. Memahami data juga dapat dilakukan dengan visualisasi. Tahap ini dapat menyelsaikan *goals* nomor 1.
-2. Menyiapkan data agar bisa digunakan dalam membangun model.
-3. Melakukan pengembangan model dengan pendekatan content based filtering serta melakukan evaluasi. Tahap ini dapat menyelesaikan *goals* nomor 2.
+1. Analyze data by performing univariate analysis and multivariate analysis. Understanding the data can also be done through visualization. This stage can accomplish Goal 1.
+2. Prepare data for use in building the model.
+3. Develop the model using the content-based filtering approach and evaluate it. This stage can accomplish Goal 2.
 
 ## Data Understanding & Preprocessing
 
-Dataset yang digunakan dalam proyek ini merupakan data daftar judul anime dengan karakteristik dan jumlah penggemar serta rata-rata rating dari pengguna. Dataset ini dapat diunduh di [Kaggle : House Rent Prediction Dataset](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database).
+The dataset used in this project is a list of anime titles with characteristics such as the number of fans and average ratings from users. This dataset can be downloaded from [Kaggle: Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database).
 
-Berikut informasi pada dataset :
+Here is information about the dataset:
 <br>
 
-Terdapat dua dataset, yaitu dataset anime yang berisi setiap judul anime beserta dengan genre, tipe, epidoses, rata-rata rating, dan jumlah anggota komunitas anime tersebut dan dataset anime_rating yang berisi pemberian rating anime dari setiap user.
+There are two datasets, namely the anime dataset containing each anime title along with its genre, type, episodes, average rating, and the number of community members for that anime. There is also the anime_rating dataset containing user ratings for each anime.
 
-1. Dataset anime
-<br> - Dataset memiliki format CSV.
-<br> - Dataset memiliki 12294 sample dengan 7 fitur.
-<br> - Dataset memiliki 1 fitur bertipe float(64), 2 fitur bertipe int64, dan 4 fitur bertipe object.
-<br> - Terdapat missing value pada dataset.
+1. Anime Dataset
+   - The dataset is in CSV format.
+   - The dataset has 12,294 samples with 7 features.
+   - The dataset has 1 float(64) feature, 2 int64 features, and 4 object features.
+   - There are missing values in the dataset.
 
-2. Dataset anime_rating
-<br> - Dataset memiliki format CSV.
-<br> - Dataset memiliki 7813737 sample dengan 3 fitur.
-<br> - Dataset memiliki 1 fitur bertipe int64.
-<br> - Tidak ada missing value pada dataset.
+2. Anime Rating Dataset
+   - The dataset is in CSV format.
+   - The dataset has 7,813,737 samples with 3 features.
+   - The dataset has 1 int64 feature.
+   - There are no missing values in the dataset.
 
-### Variable - Variable Pada Dataset
+### Variables in the Dataset
 
-1. Dataset anime
-<br> - `anime_id` = ID unik dari setiap anime.
-<br> - `name` = Judul anime.
-<br> - `genre` =  genre anime.
-<br> - `type` = Tipe tayang anime, seperti TV, OVA, etc.
-<br> - `episodes` = Banyaknya episode setiap anime.
-<br> - `rating` = Rata-rata rating setiap anime terhadap jumlah user yang memberi rating.
-<br> - `members` = Jumlah anggota komunitas setiap anime.
+1. Anime Dataset
+   - `anime_id` = Unique ID for each anime.
+   - `name` = Anime title.
+   - `genre` = Anime genre.
+   - `type` = Type of anime, such as TV, OVA, etc.
+   - `episodes` = Number of episodes for each anime.
+   - `rating` = Average rating for each anime based on the number of users who gave ratings.
+   - `members` = Number of community members for each anime.
 
-2. Dataset anime_rating
-<br> - `user_id` = ID unik dari setiap user
-<br> - `anime_id` = ID dari anime yang diberi peringkat oleh user
-<br> - `rating` = Rating yang diberikan oleh user.
+2. Anime Rating Dataset
+   - `user_id` = Unique ID for each user.
+   - `anime_id` = ID of the anime rated by the user.
+   - `rating` = Rating given by the user.
 
-### Data preprocessing
+### Data Preprocessing
 
-1. Menghapus missing value pada dari dataset anime.
-2. Menghapus duplikat sample dari rating anime dataset.
-3. Menghapus symbol pada judul anime.
+1. Remove missing values from the anime dataset.
+2. Remove duplicate samples from the anime rating dataset.
+3. Remove symbols from anime titles.
 
 ### Univariate Analysis
 
-Univariate Analysis adalah menganalisis setiap fitur secara terpisah.
+Univariate Analysis involves analyzing each feature separately.
 
-#### Analisis setiap atribut dataset anime
+#### Analysis of each attribute in the anime dataset
 
 |       | anime_id | rating   | members    |
 |-------|----------|----------|------------|
@@ -110,9 +111,9 @@ Univariate Analysis adalah menganalisis setiap fitur secara terpisah.
 | 75%   | 23729.00 | 7.18     | 9588.00    |
 | max   | 34519.00 | 10.00    | 1013917.00 |
 
-Dataset anime memiliki rating anime terendah 1.67 dan rating tertinggi 10 dengan rata-rata 6.48. Dataset ini juga memiliki jumlah anggota komunitas anime terendah 12 dan terbanyak 1013917 dengan rata-rata 18348. Perbedaan nilai min dan max dari jumlah anggota komunitas anime cukup jauh dan hal ini wajar dikarenakan beberapa anime memang sangat populer dan beberapa tidak.
+The anime dataset has the lowest anime rating of 1.67 and the highest rating of 10, with an average rating of 6.48. This dataset also has the lowest number of anime community members at 12 and the highest at 1,013,917, with an average of 18,348. The significant difference between the minimum and maximum values of the number of anime community members is expected due to some anime being very popular while others are not.
 
-#### Analisis setiap atribut numerik dataset anime_rating
+#### Analysis of Each Numerical Attribute in the anime_rating Dataset
 
 |       | user_id    | anime_id   | rating     |
 |-------|------------|------------|------------|
@@ -125,115 +126,81 @@ Dataset anime memiliki rating anime terendah 1.67 dan rating tertinggi 10 dengan
 | 75%   | 54757.00   | 14093.00   | 9.00       |
 | max   | 73516.00   | 34519.00   | 10.00      |
 
-Dataset rating anime memiliki rating terendah yang diberikan user pada suatu anime adalah -1 dan rating tertinggi adalah 10. Rating -1 menandakan bahwa user menonton anime, namun tidak memberikan rating. Sample user yang tidak memberikan rating tidak akan digunakan sehingga dihapus.
+The anime rating dataset has the lowest user-given rating for an anime as -1, and the highest rating is 10. A rating of -1 indicates that the user watched the anime but did not provide a rating. Samples where users did not provide a rating will be excluded from further analysis and are removed using the following code:
 
-```
+```python
 anime_rating = anime_rating[~(anime_rating.rating == -1)]
 ```
 
-#### Analisis fitur kategorik genre pada dataset anime
+#### Analysis of Categorical Feature "Genre" in the Anime Dataset
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190631304-e27ab156-08a5-474f-9d7d-52fe2e58112f.png" width="400"/></div>
-Dataset anime memiliki banyak sekali genre unik. Dapat diperhatikan bahwa 1 judul anime bisa memiliki banyak genre atau hanya memiliki 1 genre. Pemberian genre yang seperti ini wajar dalam anime.
+![Genre Analysis](https://user-images.githubusercontent.com/107544829/190631304-e27ab156-08a5-474f-9d7d-52fe2e58112f.png)
 
-#### Analisis fitur kategorik tipe tayang pada dataset anime
+The anime dataset has a multitude of unique genres. It is noticeable that one anime title can have multiple genres or only one genre. This variety in genre assignment is common in anime.
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190632721-2f1bbc4f-8567-4cc9-b49f-2c0a5e28beb1.png" width="350"/></div>
+#### Analysis of Categorical Feature "Type" in the Anime Dataset
 
-Insights :
+![Type Analysis](https://user-images.githubusercontent.com/107544829/190632721-2f1bbc4f-8567-4cc9-b49f-2c0a5e28beb1.png)
 
-- 30.52% anime ditayangkan di TV.
-- 27.33% anime tayang dalam bentuk OVA.
-- 18.80% anime tayang dalam bentuk movie.
+Insights:
 
-Movie adalah anime yang tayang dalam bentuk film. Original Video Animation (OVA) adalah anime yang diliris dalam bentuk fisik (CD, DVD, HD-DVD, Blu-ray, dll) tanpa penyiaran TV. Original Net Animation (ONA) adalah anime yang tayang lebih dahulu lewat internet. Spesial adalah episode anime yang durasinya hanya beberapa menit dan biasanya tidak memiliki hubungan dengan alur cerita aslinya atau sebagai fan service.
+- 30.52% of anime are aired on TV.
+- 27.33% of anime are in the form of OVA.
+- 18.80% of anime are in the form of movies.
 
-<br>
+"Movie" refers to anime presented in the form of a film. Original Video Animation (OVA) refers to anime released physically (CD, DVD, HD-DVD, Blu-ray, etc.) without TV broadcasting. Original Net Animation (ONA) is anime released first through the internet. Specials are anime episodes with a short duration, usually not related to the original storyline or provided as fan service.
 
-Referensi :
-[Pengertian Episode OVA,ONA,OAD dan SPESIAL Dalam Anime](https://binarycode100.wordpress.com/2018/12/08/pengertian-episode-ovaonaoad-dan-spesial-dalam-anime/).
+Reference: [Pengertian Episode OVA,ONA,OAD dan SPESIAL Dalam Anime](https://binarycode100.wordpress.com/2018/12/08/pengertian-episode-ovaonaoad-dan-spesial-dalam-anime/).
 
-#### Analisis distribusi data rata-rata rating anime
+#### Analysis of the Distribution of Average Anime Ratings
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190857442-0b12b379-067e-4595-9481-1cd20323f4c0.png" width="300"/></div>
+![Average Rating Distribution](https://user-images.githubusercontent.com/107544829/190857442-0b12b379-067e-4595-9481-1cd20323f4c0.png)
 
-Sebagian besar rata-rata peringkat anime tersebar dari rating 4 hingga 8.
+Most anime have average ratings spread from 4 to 8.
 
-#### Analisis distribusi data peringkat yang diberikan pengguna
+#### Analysis of the Distribution of User Ratings
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190857570-e8c4fd5e-994c-4519-9792-dca9b66c30db.png" width="300"/></div>
+![User Rating Distribution](https://user-images.githubusercontent.com/107544829/190857570-e8c4fd5e-994c-4519-9792-dca9b66c30db.png)
 
-Sebagian besar peringkat yang diberikan pengguna tersebar dari rating 6 hingga 10.
+Most user ratings are spread from 6 to 10.
 
 ### Multivariate Analysis
 
-Multivariate Analysis menunjukkan hubungan antara dua atau lebih fitur dalam data.
+Multivariate Analysis shows the relationship between two or more features in the data.
 
-#### Top 10 komunitas anime terbesar
+#### Top 10 Largest Anime Communities
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190857731-c2932dff-c16c-4c4c-af47-29e59bc5de8a.png" width="1000"/></div>
+![Top Anime Communities](https://user-images.githubusercontent.com/107544829/190857731-c2932dff-c16c-4c4c-af47-29e59bc5de8a.png)
 
-Anime Death Note memiliki anggota komunitas tertinggi, diikuti dengan Shingeki no Kyojin dan Sword Art Online. Informasi ini dapat digunakan pengembang sistem dalam merekomendasikan anime yang populer kepada penggunanya. Banyaknya anggota komunitas anime menandakan bahwa anime cukup favorit dan populer di kalangan pengguna.
+The anime "Death Note" has the highest community members, followed by "Shingeki no Kyojin" and "Sword Art Online." This information can be used by the system developers to recommend popular anime to users. The number of anime community members indicates that the anime is quite popular among users.
 
-#### Top 10 anime berdasarkan rata-rata rating anime
+#### Top 10 Anime Based on Average Anime Ratings
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190858010-98b51998-dde0-4dc2-b978-9284f8d2dc4c.png" width="1000"/></div>
+![Top Anime by Average Rating](https://user-images.githubusercontent.com/107544829/190858010-98b51998-dde0-4dc2-b978-9284f8d2dc4c.png)
 
-Anime Taka no Tsume 8: Yoshida-kun no X-Files memiliki rata-rata rating anime tertinggi, diikuti dengan Spoon-hime no Swing Kitchen dan Mogura no Motoro. Informasi ini cenderung bias untuk dijadikan rekomendasi dikarenakan rata-rata rating yang dipengaruhi oleh jumlah pengguna yang memberi rating. Misalnya anime X memiliki rata-rata rating tinggi, namun yang memberikan rating ternyata hanya 3 pengguna.
+The anime "Taka no Tsume 8: Yoshida-kun no X-Files" has the highest average rating, followed by "Spoon-hime no Swing Kitchen" and "Mogura no Motoro." This information tends to be biased for recommendations because the average rating is influenced by the number of users who gave ratings. For example, an anime X may have a high average rating, but only 3 users gave ratings.
 
-#### Top 10 anime berdasarkan kontribusi rating pengguna
+#### Top 10 Anime Based on User Rating Contributions
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190858357-7be813d7-67e6-4283-899c-6af270de3fb6.png" width="1000"/></div>
+![Top Anime by User Rating Contributions](https://user-images.githubusercontent.com/107544829/190858357-7be813d7-67e6-4283-899c-6af270de3fb6.png)
 
-Anime Death Note menyumbang kontribusi peringkat oleh pengguna terbanyak, diikuti oleh anime Sword Art Online dan anime Shingeki no Kyokin. Informasi ini dapat digunakan pengembang sistem dalam merekomendasikan anime yang populer kepada penggunanya. Hal ini dikarenakan semakin banyaknya kontribusi peringkat, semakin banyak pula pengguna yang menonton anime tersebut (populer).
+The anime "Death Note" contributes the most user ratings, followed by "Sword Art Online" and "Shingeki no Kyokin." This information can be used by the system developers to recommend popular anime to users. This is because the more rating contributions, the more users watched that anime (popularity).
 
-## Content Based Filtering Model & Result
+## Content-Based Filtering Model & Result
 
-### Content Based Filtering
+### Content-Based Filtering
 
-Sistem yang dibangun oleh proyek ini adalah sistem rekomendasi sederhana berdasarkan genre anime berbasis content based filtering.
+The system built by this project is a simple recommendation system based on anime genre using content-based filtering.
 
-Sistem rekomendasi berbasis konten adalah sistem yang merekomendasikan konten yang mirip dengan konten yang disukai pengguna sebelumnya. Apabila suatu konten memiliki karakteristik yang sama atau hampir sama dengan konten lainnya, maka kedua konten tersebut dapat dikatakan mirip.
+A content-based recommendation system suggests content that is similar to what a user has liked before. If two pieces of content have similar or nearly similar characteristics, they can be considered similar.
 
-Misalkan dalam sistem rekomendasi anime, jika pengguna menyukai anime Jujutsu Kaisen, sistem dapat merekomendasikan anime dengan genre action lainnya.
+For example, in an anime recommendation system, if a user likes the anime "Jujutsu Kaisen," the system can recommend other action genre anime.
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190860242-6e0e9d61-e54f-46d0-930e-415e73cebab0.png" width="500"/></div>
+![TF-IDF Matrix](https://user-images.githubusercontent.com/107544829/190860242-6e0e9d61-e54f-46d0-930e-415e73cebab0.png)
 
 #### TF-IDF
 
-TF-IDF atau Term Frequency - Inverse Document Frequency, Bahasa adalah ukuran statistik yang menggambarkan pentingnya istilah dalam dokumen dalam kumpulan atau korpus. Metrik ini biasanya digunakan sebagai faktor pembobotan untuk pencarian informasi, penambangan teks, dan pemodelan pengguna. Nilai TF-IDF meningkat secara linier dengan jumlah kemunculan suatu term dan bergantung pada jumlah dokumen dalam korpus yang memuat term tersebut.
-
-TF-IDF digunakan pada sistem rekomendasi anime untuk menentukan representasi fitur penting dari setiap genre anime. Untuk menjalankan TF-IDF digunakan fungsi [tfidfvectorizer()](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) dari library sklearn.
-
-Setelah itu hasil TF-IDF tadi ditransformasikan ke dalam bentuk matriks dengan fungsi todense().
-
-Dataframe baru dibuat untuk menunjukkan matriks TF-IDF untuk beberapa anime dan genre. Semakin tinggi nilai matriks menunjukkan semakin erat hubungan antara anime dengan genre tersebut. Misalkan anime Asa da yo! Kaishain merupakan genre comedy terlihat dari nilai matriks 1.0 yang didapat anime tersebut pada genre comedy.
-
-<br>
-<div><img src="https://user-images.githubusercontent.com/107544829/190863156-e486ec9c-e784-46db-ab82-d65cd25de13b.png" width="700"/></div>
-
-<br>
-
-Referensi : [Toggle the table of contents
-tf–idf](https://id.wikipedia.org/wiki/Tf%E2%80%93idf)
-
-#### Cosine Similarity
-
-Cosine Similarity mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor menunjuk ke arah yang sama. Teknik ini bekerja dengan menghitung sudut cosinus antara dua vektor. Semakin kecil sudut cosinus antara dua vektor, semakin besar nilai kemiripan cosinusnya.
-
-<br>
-
-<div><img src="https://user-images.githubusercontent.com/107544829/190915969-92ac61ae-b1ac-44d9-9ec1-92f778c19602.png" width="400"/></div>
-
-[Referensi gambar](https://www.tyrrell4innovation.ca/miword-of-the-day-iscosine-distance/)
-
-<br>
-
-Cosine similarity digunakan untuk menghitung derajat kesamaan antar anime. Untuk menjalankan cosine similarity digunakan fungsi [cosine_similarity](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) dari library sklearn.  
-
-Tahap ini menghitung cosise similarity pada dataframe tfidf_matrix yang diperoleh dari tahapan TF-IDF sebelumnya.
-
-Dataframe baru dibuat untuk melihat kesamaan antar anime (hasil dari cosine similarity). Dataframe ini menunjukkan nilai kesamaan antar anime. Semakin tinggi nilai cosline similarity, kedua anime akan semakin memiliki kesamaan.Misalnya, Mama Puri!?, Dark Blue, dan Anata dake Konbanwa memiliki kesamaan dengan anime Kisaku Spirit terlihat dari nilai cosine similarity 1.0 antar kedua anime tersebut.
+TF-IDF (Term Frequency - In
 
 <br>
 
@@ -255,19 +222,15 @@ Dataframe baru dibuat untuk melihat kesamaan antar anime (hasil dari cosine simi
 
 ### Result
 
-Fungsi `anime_recommendations` dibuat untuk menemukan rekomendasi anime menggunakan similarity yang telah didefinisikan sebelumnya. Fungsi ini bekerja dengan cara mengambil anime dengan similarity terbesar dari index yang ada.
+The `anime_recommendations` function is created to find anime recommendations using the previously defined similarity. This function works by taking anime with the highest similarity from the existing indices.
 
-Selanjutnya adalah menemukan rekomendasi yang mirip dengan anime Naruto :
-
-<br>
+Next is to find recommendations similar to the anime "Naruto":
 
 | anime_id | name   | genre                                              | type | episodes | rating | members |
 |----------|--------|----------------------------------------------------|------|----------|--------|---------|
 | 20       | Naruto | Action, Comedy, Martial Arts, Shounen, Super Power | TV   | 220      | 7.81   | 683297  |
 
-Berikut top 5 rekomendasi :
-
-<br>
+Here are the top 5 recommendations:
 
 | name                                                    | genre                                              |
 |---------------------------------------------------------|----------------------------------------------------|
@@ -277,13 +240,9 @@ Berikut top 5 rekomendasi :
 | Naruto x UT                                             | Action, Comedy, Martial Arts, Shounen, Super Power |
 | Naruto: Shippuuden                                      | Action, Comedy, Martial Arts, Shounen, Super Power |
 
-Sistem telah berhasil merekomendasikan top 5 persen anime yang mirip dengan naruto, yaitu beberapa film dan seri dari naruto itu sendiri. Jadi, jika pengguna menyunkai naruto, maka sistem dapat merekomendasikan seri atau movie naruto lainnya.
-
-<br>
+The system has successfully recommended the top 5 anime that are similar to Naruto, including some movies and series from Naruto itself. So, if a user likes Naruto, the system can recommend other series or movies from Naruto.
 
 ## Evaluation
-Evaluasi hasil sistem dengan recommender system precision dalam menemukan rekomendasi dari anime naruto adalah sebesar 5/5 atau 100%.
+The evaluation of the system using the recommender system precision in finding recommendations from the anime "Naruto" is 5/5 or 100%.
 
-<div><img src="https://user-images.githubusercontent.com/107544829/190915653-cf57d3de-db41-455c-b060-b4dd6630157b.png" width="500"/></div>
-
-<br>
+![Recommender System Precision](https://user-images.githubusercontent.com/107544829/190915653-cf57d3de-db41-455c-b060-b4dd6630157b.png)
