@@ -1,15 +1,4 @@
-<p align="center">
-  <img src=".github/logo.svg?sanitize=true" width="200px" height="200px">
-</p>
-<h2 align="center">Offline Text To Speech (TTS) converter for Python </h2>
 
-
-[![Downloads](https://pepy.tech/badge/pyttsx3)](https://pepy.tech/project/pyttsx3) ![Downloads](https://pepy.tech/badge/pyttsx3/week)  [![](https://img.shields.io/github/languages/code-size/nateshmbhat/pyttsx3.svg?style=plastic)](https://github.com/nateshmbhat/pyttsx3)  [![](https://img.shields.io/github/license/nateshmbhat/pyttsx3?style=plastic)](https://github.com/nateshmbhat/pyttsx3) [![](https://img.shields.io/pypi/v/pyttsx3.svg?style=plastic)](https://pypi.org/project/pyttsx3/) [![](https://img.shields.io/github/languages/top/nateshmbhat/pyttsx3.svg?style=plastic)](https://github.com/nateshmbhat/pyttsx3) [![](https://img.shields.io/badge/author-nateshmbhat-green.svg)](https://github.com/nateshmbhat)
-
-
-`pyttsx3` is a text-to-speech conversion library in Python. Unlike alternative libraries, **it works offline**.
-
-<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/nateshmbhat"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee 😇"><span style="margin-left:5px;font-size:19px !important;">Buy me a coffee 😇</span></a>
 
 ## Installation :
 
